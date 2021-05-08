@@ -1,0 +1,32 @@
+:root{
+    --mainBackground:#2B2733;
+    --textOnMainBackground : #CBC9CF;
+    --headerCards : #46424D;
+    --cardShadow: #26222D; 
+    --textOnCards: #FFF;
+    --study:#B3FD78;
+    --meditate:#C278FD ;
+    --exercise:#FD8078 ;
+    --error:#EFB7EC;
+}
+html{
+    background-color: var(--mainBackground);
+    color:var(--textOnMainBackground);
+}
+
+
+#centerAlignNav {
+    text-align: center;
+}
+.leftColumn{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    flex-wrap: wrap;
+}
+.rightColumn{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 50%;
+    flex-wrap: wrap;
+}
