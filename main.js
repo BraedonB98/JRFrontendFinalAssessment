@@ -47,6 +47,8 @@ function markComplete(activ)
 {
     activ.completed=true;
     saveToStorage(activ);
+    loadPastActiv();
+    
 }
 function saveToStorage(activ)
 {
@@ -56,6 +58,14 @@ function saveToStorage(activ)
     console.log("saving to storage");
     console.log(array);
     locStorage.setItem("activities",JSON.stringify(array));
+}
+function loadPastActiv(){
+    var array = JSON.parse(locStorage.getItem("activities"));
+    var activitiesDoc = document.getElementById("loggedActivities")
+    for(i in array)
+    {
+        activitiesDoc.innerHTML=+"";//here is where I need to make sure it will be able to add all activities completed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+    }
 }
 
 document.querySelector("#startActivity").addEventListener("click", startTimer);

@@ -20,7 +20,21 @@ body{
   nav{
     margin : 0;
   }
-
+  button {
+    background-color: white;
+    color: var(--headerCards);
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 30%;
+    border-radius:5%;
+    font-size: large;
+  }
+  .alignButtonRight
+  {
+    display: flex;
+    flex-direction: row-reverse;
+  }
 #centerAlignNav {
     text-align: center;
     background-color: var(--headerCards);
