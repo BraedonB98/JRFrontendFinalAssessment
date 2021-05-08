@@ -25,9 +25,9 @@
                 <label for="accomplish"><b>What Would you like to accomplish during this time?</b></label>
                 <input type="text" id="accomplish" name="accomplish" required>
                 <label for="minutes"><b>Minutes</b></label>
-                <input type="text" id="minutes" class ="timeForm" name="minutes" required>
+                <input type="number" pattern=" 0+\.[0-9]*[1-9][0-9]*$" id="minutes" class ="timeForm" name="minutes" required>
                 <label for="seconds"><b>Seconds</b></label>
-                <input type="text" id="seconds" class ="timeForm" name="seconds" required>
+                <input type="number" pattern=" 0+\.[0-9]*[1-9][0-9]*$" id="seconds" class ="timeForm" name="seconds" required>
                 <button type="submit" id="startActivity">Start Activity</button> <!--still need to style this....-->
              </form>
           </div>

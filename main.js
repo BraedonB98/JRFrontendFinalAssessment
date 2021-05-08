@@ -1,3 +1,7 @@
+var memStorage = window.sessionStorage;
+var locStorage = window.localStorage;
+var activitiesArray = []
+locStorage.setItem("activities",JSON.stringify(activitiesArray));
 class Activities{
     constructor(type,accomplishText,timeMin,timeSec)
     {
@@ -5,16 +9,19 @@ class Activities{
         this.accomplishText =accomplishText;
         this.timeMin = timeMin;
         this.timeSec = timeSec;
+        this.completed = false;
+        this.id = "";
     }
     get totalTime()
     {
-        var totalTimeVal = (this.timeMin*60)+this.timeSec;
+        var totalTimeVal = ((this.timeMin*60)+this.timeSec);
         return(totalTimeVal);
     }
-}
 
+}
 function startTimer()
 {
+    event.preventDefault();
     var activitySelectChecker = "";
     if(document.getElementById("study").checked)
     {
@@ -29,22 +36,29 @@ function startTimer()
         activitySelectChecker = "exercise";
     }
 
-    var event = new Activities(activitySelectChecker, document.getElementById("accomplish").value, document.getElementById("minutes").value , document.getElementById("seconds"));
-    console.log(event);
-    console.log(event.totalTime);
-    setTimeout(markComplete,event.totalTime);
+    let activ = new Activities(activitySelectChecker, document.getElementById("accomplish").value, document.getElementById("minutes").value , document.getElementById("seconds").value);
+    var timeoutTime = setTimeout(markComplete(activ),activ.totalTime*1000);3
+    //while(getTimeLeft(timeoutTime)!= 0)
+    //{
+    //    console.log (getTimeLeft(timeoutTime));
+    //}
     console.log("starting timer");
 
     //change pages as needed
 }
-function markComplete()
+function markComplete(activ)
 {
-
+    activ.completed=true;
+    saveToStorage(activ);
 }
-function saveToStorage()
+function saveToStorage(activ)
 {
     //create class for activities
-    //
+    var array = JSON.parse(locStorage.getItem("activities"));
+    array.push(activ);
+    console.log("saving to storage");
+    console.log(array);
+    locStorage.setItem("activities",JSON.stringify(array));
 }
 
-document.querySelector("#startActivity").addEventListener("click", loginSubmit);
+document.querySelector("#startActivity").addEventListener("click", startTimer);
