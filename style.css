@@ -9,24 +9,79 @@
     --exercise:#FD8078 ;
     --error:#EFB7EC;
 }
+/* ------------------------------------------Main  page styling------------------------------------------------------- */
 html{
     background-color: var(--mainBackground);
     color:var(--textOnMainBackground);
 }
-
+body{
+    margin : 0;
+  }
+  nav{
+    margin : 0;
+  }
 
 #centerAlignNav {
     text-align: center;
+    background-color: var(--headerCards);
+    color:var(--textOnCards);
 }
-.leftColumn{
-    display: flex;
-    flex-direction: row;
-    width: 50%;
-    flex-wrap: wrap;
-}
-.rightColumn{
-    display: flex;
-    flex-direction: row-reverse;
-    width: 50%;
-    flex-wrap: wrap;
-}
+
+.split {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  /* Control the left side */
+.left {
+    left:0;
+    width: 65%;
+  }
+  /* Control the right side */
+.right {
+    right: 0;
+    width: 33%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-left: 2px solid var(--textOnCards);
+    padding-left:1%
+  }
+
+  .card {
+    box-shadow: var(--cardShadow);
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: var(--headerCards);
+    color:var(--textOnCards);
+    height: 70%;
+    border-radius: 2%;
+    padding: 5%;
+  }
+  
+  #accomplish{
+    background-color: var(--headerCards);
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid var(--textOnCards);
+  }
+  .timeForm{
+    background-color: var(--headerCards);
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid var(--textOnCards);
+  }

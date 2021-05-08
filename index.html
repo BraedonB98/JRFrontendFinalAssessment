@@ -9,11 +9,30 @@
               <H1> Intention Timer</H1>
           </div>
         </div>
-        <div class = "leftColumn">
+        <div class = "split left">
           <H1>New Activity</H1>
-          
+          <div class= "card">
+              <H2>Select a category:</H2><br>
+              <form id="catagory">
+                <!----------------------- Button Select still need alot of styling!!!!!!!!!!!!!!!!!!!!---------------------------------------> 
+                <input type="radio" id="study" name="activitySelect" value="study">
+                <label for="study">Study</label><br>
+                <input type="radio" id="meditate" name="activitySelect" value="meditate">
+                <label for="meditate">Meditate</label><br>
+                <input type="radio" id="exercise" name="activitySelect" value="exercise">
+                <label for="exercise">Exercise</label>
+
+                <label for="accomplish"><b>What Would you like to accomplish during this time?</b></label>
+                <input type="text" id="accomplish" name="accomplish" required>
+                <label for="minutes"><b>Minutes</b></label>
+                <input type="text" id="minutes" class ="timeForm" name="minutes" required>
+                <label for="seconds"><b>Seconds</b></label>
+                <input type="text" id="seconds" class ="timeForm" name="seconds" required>
+                <button type="submit" id="startActivity">Start Activity</button> <!--still need to style this....-->
+             </form>
+          </div>
         </div>
-        <div class = "rightColumn">
+        <div class = "split right">
             <H1>Past Activities</H1>
             <div class = "loggedActivities">
                 <p>you haven't logged any activities yet. complete the form to the left to get started!</p>
