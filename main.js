@@ -37,7 +37,7 @@ function startTimer()
     }
 
     let activ = new Activities(activitySelectChecker, document.getElementById("accomplish").value, document.getElementById("minutes").value , document.getElementById("seconds").value);
-    var timeoutTime = setTimeout(markComplete(activ),activ.totalTime*1000);3
+    var timeoutTime = setTimeout(function(){markComplete(activ)},activ.totalTime*1000);
     //I could create a function that calls a time out for 1 second that calls itself until the total seconds have been reached but it seems like an overly complicated and load heavy solution
     console.log("starting timer");
 
