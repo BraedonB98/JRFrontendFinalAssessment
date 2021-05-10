@@ -10,8 +10,8 @@
           </div>
         </div>
         <div class = "split left">
-          <H1>New Activity</H1>
-          <div class= "card">
+          <H1 id= "leftHeader">New Activity</H1>
+          <div class= "card" id = "entryScreen">
               <H2>Select a category:</H2><br>
               <form id="catagory">
                 <!----------------------- Button Select still need alot of styling!!!!!!!!!!!!!!!!!!!!---------------------------------------> 
@@ -33,10 +33,16 @@
                 </div>
              </form>
           </div>
+          <div class = "notVisible card" id = activeActivityScreen>
+              <H2>Deep Breathing</H2>
+              <H1 id="timerDisplay">Time</H1>
+              <button type="submit" id="circleStart">Start</button>
+              <button type="submit" id="logActivityButton">Log Activity</button> 
+          </div>
         </div>
         <div class = "split right">
             <H1>Past Activities</H1>
-            <div class = "loggedActivities">
+            <div class = "loggedActivities" id = "loggedActivitie">
                 <p>you haven't logged any activities yet. complete the form to the left to get started!</p>
             </div>
         </div>
