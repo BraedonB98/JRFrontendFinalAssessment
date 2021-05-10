@@ -50,6 +50,7 @@ function startActivity()
     recentActiv = new Activities(activitySelectChecker, document.getElementById("accomplish").value, document.getElementById("minutes").value , document.getElementById("seconds").value);
     var timerDisplay = document.getElementById("timerDisplay");
     timerDisplay.innerHTML = `${recentActiv.minLeft}:${recentActiv.secLeft}`;
+    document.getElementById("activeActivityScreen").style.display = "flex";
 }
 
 function startTimer()
@@ -82,7 +83,8 @@ function startTimer()
 function markComplete(activ)
 {
     activ.completed=true;
-    recentActiv = activ;
+    //recentActiv = activ;
+    document.getElementById("circleStart").innerHTML = "COMPLETE!"
 }
 
 function saveToStorage()
@@ -92,6 +94,9 @@ function saveToStorage()
     console.log("saving to storage");
     console.log(array);
     locStorage.setItem("activities",JSON.stringify(array));
+    document.getElementById("activeActivityScreen").style.display = "none";
+    document.getElementById("entryScreen").style.display = "block";
+    loadPastActiv();
 }
 function loadPastActiv(){
     var array = JSON.parse(locStorage.getItem("activities"));
@@ -107,12 +112,6 @@ function loadPastActiv(){
         activitiesDoc.innerHTML= innerHTMLInput;
     }
 }
-function updateActivityScreen(timeLeft)
-{
-
-}
-
-
 loadPastActiv();
 
 
